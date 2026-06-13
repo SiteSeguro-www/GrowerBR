@@ -219,7 +219,6 @@ export default function App() {
 
                 <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
                   <div className="text-center relative z-10 w-full">
-                    <p className="text-zinc-400 font-bold mb-2 uppercase tracking-[0.2em] text-[10px]">Valor do Investimento</p>
                     <div className="flex items-baseline justify-center gap-2">
                       <span className="text-lg sm:text-xl text-zinc-500 font-light">6x de</span>
                       <span className="text-4xl sm:text-6xl font-black tracking-tighter font-display text-white">R$3<span className="text-2xl sm:text-4xl text-zinc-400">,16</span></span>
