@@ -211,7 +211,7 @@ export default function App() {
                   <div className="flex flex-col gap-1 text-sm sm:text-base font-medium tracking-tight font-display uppercase leading-tight">
                     <span className="text-white">E-book completo. - $49,90</span>
                     <span className="text-zinc-200">1 Consultoria Grátis. - $69,90</span>
-                    <span className="text-zinc-400">Pack 5 Com Seeds. - $80,00</span>
+                    <span className="text-zinc-300">Pack 5 Com Seeds. - $79,90</span>
                     <span className="text-white font-bold text-lg mt-2">TUDO POR R$8,30</span>
                   </div>
                 </div>
