@@ -28,6 +28,87 @@ export default function App() {
   const CHECKOUT_LINK = "https://mpago.li/2pMQXbQ";
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [hasShownExitPopup, setHasShownExitPopup] = useState(false);
+  const CheckoutCard = ({ id }: { id?: string }) => (
+    <motion.div 
+        id={id}
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full max-w-md lg:max-w-[480px] xl:max-w-[540px] flex-shrink-0 bg-[#0A0A0A] border border-white/10 rounded-[2rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-3xl"
+    >
+        {/* Top Radiant Line */}
+        <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
+
+        <div className="text-center mb-8">
+          <div className="flex flex-col gap-1 text-base sm:text-lg md:text-xl font-medium tracking-tight font-display uppercase leading-tight mx-auto w-fit items-center">
+            <span className="text-zinc-300 whitespace-nowrap self-start">✔️ Pack Com 5 Seeds - R$79,90</span>
+            <span className="text-white whitespace-nowrap self-start">✔️ E-book Completo - R$49,90</span>
+            <span className="text-zinc-200 whitespace-nowrap self-start">✔️ 1 Consultoria - R$69,90</span>
+            <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl mt-2 whitespace-nowrap">TUDO POR R$24,90</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
+          <div className="text-center relative z-10 w-full">
+            <div className="flex items-baseline justify-center gap-2">
+              <span className="text-lg sm:text-xl text-zinc-500 font-light">3x de</span>
+              <span className="text-4xl sm:text-6xl font-black tracking-tighter font-display text-white">R$8<span className="text-2xl sm:text-4xl text-zinc-400">,30</span></span>
+            </div>
+            <p className="text-green-400 mt-2 text-[10px] sm:text-xs font-medium tracking-wide">Ou apenas R$ 24,90 à vista.</p>
+          </div>
+
+          <div className="w-full flex flex-col gap-3 relative z-10">
+            <a 
+              href={CHECKOUT_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-6 py-4 sm:py-5 bg-gradient-to-r from-green-400 to-green-600 text-black font-black text-sm sm:text-base rounded-2xl hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_30px_rgba(57,255,20,0.3)] transition-all duration-300 flex items-center justify-center gap-2 font-display uppercase tracking-wider"
+            >
+              Comprar Agora
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </a>
+            <p className="text-center text-[9px] sm:text-[10px] text-zinc-500 uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em]">Acesso Imediato</p>
+            <div className="flex items-center justify-center gap-1 mt-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400" />
+              ))}
+              <span className="text-zinc-400 text-[10px] sm:text-xs font-semibold">( 4,9 de 5 )</span>
+            </div>
+          </div>
+
+          {/* Card internal glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-green-500/0 via-green-500/[0.05] to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        </div>
+
+        {/* Payment Methods Breakdown */}
+        <div className="pt-6 sm:pt-8 border-t border-white/5">
+          <h4 className="text-[9px] sm:text-[10px] font-bold text-zinc-500 text-center mb-5 sm:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.15em]">
+            Ambiente 100% Seguro Mercado Pago
+          </h4>
+          
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
+              <QrCode className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 mb-2 sm:mb-3" />
+              <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">PIX</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
+              <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 mb-2 sm:mb-3" />
+              <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">Cartão</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
+              <Banknote className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-400 mb-2 sm:mb-3" />
+              <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">Boleto</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-2 text-zinc-400 text-[9px] sm:text-[10px] bg-white/[0.03] py-2 sm:py-3 px-3 sm:px-5 rounded-full w-fit mx-auto border border-white/5 text-center">
+          <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
+          <span className="font-medium tracking-wide">Compra protegida. Acesso por e-mail.</span>
+        </div>
+    </motion.div>
+  );
+
   const [currentPage, setCurrentPage] = useState<'home' | 'terms'>('home');
 
   useEffect(() => {
@@ -183,6 +264,11 @@ export default function App() {
                 </span>
               </h1>
               
+              {/* Checkout Mobile */}
+              <div className="lg:hidden w-full mb-8">
+                 <CheckoutCard id="mobile-checkout" />
+              </div>
+              
               <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-zinc-300 max-w-2xl mb-8 lg:mb-12 leading-relaxed font-light tracking-wide text-left">
                 Olá, prazer, sou DW. Alguns já devem me conhecer do YouTube; sou grower há mais de 15 anos. <br /><br />
                 Neste e-book, reuni todo meu conhecimento com uma linguagem de fácil entendimento e simples para você que é iniciante. Você pode começar a cultivar sua medicina agora mesmo! <br /><br />
@@ -199,85 +285,10 @@ export default function App() {
             </motion.div>
 ...
 
-            {/* Right Column: Checkout Card */}
-            <motion.div 
-                id="mobile-checkout"
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full max-w-md lg:max-w-[480px] xl:max-w-[540px] flex-shrink-0 bg-[#0A0A0A] border border-white/10 rounded-[2rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-3xl lg:mt-8"
-            >
-                {/* Top Radiant Line */}
-                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
-
-                <div className="text-center mb-8">
-                  <div className="flex flex-col gap-1 text-base sm:text-lg md:text-xl font-medium tracking-tight font-display uppercase leading-tight mx-auto w-fit items-start">
-                    <span className="text-zinc-300 whitespace-nowrap">✔️ Pack Com 5 Seeds - R$79,90</span>
-                    <span className="text-white whitespace-nowrap">✔️ E-book Completo - R$49,90</span>
-                    <span className="text-zinc-200 whitespace-nowrap">✔️ 1 Consultoria - R$69,90</span>
-                    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl mt-2 whitespace-nowrap">TUDO POR R$24,90</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
-                  <div className="text-center relative z-10 w-full">
-                    <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-lg sm:text-xl text-zinc-500 font-light">3x de</span>
-                      <span className="text-4xl sm:text-6xl font-black tracking-tighter font-display text-white">R$8<span className="text-2xl sm:text-4xl text-zinc-400">,30</span></span>
-                    </div>
-                    <p className="text-green-400 mt-2 text-[10px] sm:text-xs font-medium tracking-wide">Ou apenas R$ 24,90 à vista.</p>
-                  </div>
-
-                  <div className="w-full flex flex-col gap-3 relative z-10">
-                    <a 
-                      href={CHECKOUT_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full px-6 py-4 sm:py-5 bg-gradient-to-r from-green-400 to-green-600 text-black font-black text-sm sm:text-base rounded-2xl hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_30px_rgba(57,255,20,0.3)] transition-all duration-300 flex items-center justify-center gap-2 font-display uppercase tracking-wider"
-                    >
-                      Comprar Agora
-                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </a>
-                    <p className="text-center text-[9px] sm:text-[10px] text-zinc-500 uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em]">Acesso Imediato</p>
-                    <div className="flex items-center justify-center gap-1 mt-1 text-yellow-400">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400" />
-                      ))}
-                      <span className="text-zinc-400 text-[10px] sm:text-xs font-semibold">( 4,9 de 5 )</span>
-                    </div>
-                  </div>
-
-                  {/* Card internal glow */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-green-500/0 via-green-500/[0.05] to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-                </div>
-
-                {/* Payment Methods Breakdown */}
-                <div className="pt-6 sm:pt-8 border-t border-white/5">
-                  <h4 className="text-[9px] sm:text-[10px] font-bold text-zinc-500 text-center mb-5 sm:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.15em]">
-                    Ambiente 100% Seguro Mercado Pago
-                  </h4>
-                  
-                  <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                    <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
-                      <QrCode className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 mb-2 sm:mb-3" />
-                      <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">PIX</span>
-                    </div>
-                    <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
-                      <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 mb-2 sm:mb-3" />
-                      <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">Cartão</span>
-                    </div>
-                    <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-all duration-300">
-                      <Banknote className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-400 mb-2 sm:mb-3" />
-                      <span className="text-[9px] sm:text-[10px] font-bold text-white/90 font-display tracking-wide uppercase">Boleto</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-2 text-zinc-400 text-[9px] sm:text-[10px] bg-white/[0.03] py-2 sm:py-3 px-3 sm:px-5 rounded-full w-fit mx-auto border border-white/5 text-center">
-                  <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
-                  <span className="font-medium tracking-wide">Compra protegida. Acesso por e-mail.</span>
-                </div>
-            </motion.div>
+            {/* Right Column: Checkout Card (Desktop Only) */}
+            <div className="hidden lg:block">
+                <CheckoutCard />
+            </div>
           </section>
 
           {/* Bento Grid Features - Premium Style */}
