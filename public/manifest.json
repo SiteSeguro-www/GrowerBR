@@ -3,7 +3,7 @@
   "short_name": "GrowerBR",
   "icons": [
     {
-      "src": "/favicon2.png",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
