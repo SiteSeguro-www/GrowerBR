@@ -127,9 +127,9 @@ export default function App() {
         {/* Navbar Premium */}
         <nav className="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-[#050505]/60 backdrop-blur-3xl">
           <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src="/favicon.png" alt="GrowerBR Logo" className="w-10 h-10 rounded-full border border-white/10 shadow-lg shadow-green-500/10" />
-              <span className="font-bold tracking-tight text-white/95 font-display text-lg">GrowerBR</span>
+            <div className="flex items-center gap-2">
+              <img src="/favicon.png" alt="GrowerBR Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/10 shadow-lg shadow-green-500/10" />
+              <span className="font-bold tracking-tight text-white/95 font-display text-sm sm:text-lg">GrowerBR</span>
             </div>
             <div className="flex items-center gap-1 sm:gap-4">
               <a 
