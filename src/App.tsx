@@ -208,13 +208,11 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-2 font-display uppercase leading-tight">
-                    <span className="text-white">E-book completo</span>
-                    <span className="text-yellow-400"> + </span>
-                    <span className="text-zinc-400">1 Consultoria</span>
-                    <span className="text-yellow-400"> + </span>
-                    <span className="text-zinc-500">Pack 5 Seeds.</span>
-                  </h2>
+                  <div className="flex flex-col gap-1 text-xl sm:text-2xl font-bold tracking-tight font-display uppercase leading-tight">
+                    <span className="text-white">E-book completo.</span>
+                    <span className="text-zinc-300">1 Consultoria Grátis.</span>
+                    <span className="text-zinc-500">Pack 5 Com Seeds.</span>
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
