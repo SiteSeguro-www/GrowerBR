@@ -208,11 +208,11 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <div className="flex flex-col gap-1 text-sm sm:text-base font-medium tracking-tight font-display uppercase leading-tight">
-                    <span className="text-white">E-book completo. - $49,90</span>
-                    <span className="text-zinc-200">1 Consultoria Grátis. - $69,90</span>
-                    <span className="text-zinc-300">Pack 5 Com Seeds. - $79,90</span>
-                    <span className="text-white font-bold text-lg mt-2">TUDO POR R$8,30</span>
+                  <div className="flex flex-col gap-1 text-base sm:text-lg md:text-xl font-medium tracking-tight font-display uppercase leading-tight">
+                    <span className="text-white whitespace-nowrap">E-book completo. - $49,90</span>
+                    <span className="text-zinc-200 whitespace-nowrap">1 Consultoria Grátis. - $69,90</span>
+                    <span className="text-zinc-300 whitespace-nowrap">Pack Com 5 Seeds. - $79,90</span>
+                    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl mt-2 whitespace-nowrap">TUDO POR R$8,30</span>
                   </div>
                 </div>
 
