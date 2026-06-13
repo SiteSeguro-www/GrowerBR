@@ -128,7 +128,10 @@ export default function App() {
         <nav className="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-[#050505]/60 backdrop-blur-3xl">
           <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/favicon.png" alt="GrowerBR Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/10 shadow-lg shadow-green-500/10" />
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden flex items-center justify-center p-[2px]">
+                <div className="absolute inset-0 bg-gradient-to-tr from-green-400 via-green-500 to-green-900 animate-[spin_3s_linear_infinite] rounded-full"></div>
+                <img src="/favicon.png" alt="GrowerBR Logo" className="relative z-10 w-full h-full rounded-full border border-white/10 shadow-lg shadow-green-500/10 bg-[#050505]" />
+              </div>
               <span className="font-bold tracking-tight text-white/95 font-display text-sm sm:text-lg">GrowerBR</span>
             </div>
             <div className="flex items-center gap-1 sm:gap-4">
