@@ -208,11 +208,13 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 shadow-inner overflow-hidden">
-                    <img src="/favicon.png" alt="GrowerBR Logo" className="w-full h-full object-cover" />
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-3xl font-black tracking-tighter mb-2 font-display uppercase leading-tight">Invista no seu cultivo.</h2>
-                  <p className="text-xs sm:text-sm text-zinc-400 font-light">E-book completo + 1 Consultoria Especial + Pack 5 Seeds.</p>
+                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-2 font-display uppercase leading-tight">
+                    <span className="text-white">E-book completo</span>
+                    <span className="text-yellow-400"> + </span>
+                    <span className="text-zinc-400">1 Consultoria</span>
+                    <span className="text-yellow-400"> + </span>
+                    <span className="text-zinc-500">Pack 5 Seeds.</span>
+                  </h2>
                 </div>
 
                 <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
@@ -236,6 +238,12 @@ export default function App() {
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </a>
                     <p className="text-center text-[9px] sm:text-[10px] text-zinc-500 uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em]">Acesso Imediato</p>
+                    <div className="flex items-center justify-center gap-1 mt-1 text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400" />
+                      ))}
+                      <span className="text-zinc-400 text-[10px] sm:text-xs font-semibold">( 4,9 de 5 )</span>
+                    </div>
                   </div>
 
                   {/* Card internal glow */}
