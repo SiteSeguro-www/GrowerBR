@@ -212,7 +212,7 @@ export default function App() {
                     <span className="text-white whitespace-nowrap">E-book completo. - $49,90</span>
                     <span className="text-zinc-200 whitespace-nowrap">1 Consultoria Grátis. - $69,90</span>
                     <span className="text-zinc-300 whitespace-nowrap">Pack Com 5 Seeds. - $79,90</span>
-                    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl mt-2 whitespace-nowrap">TUDO POR R$8,30</span>
+                    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl mt-2 whitespace-nowrap">TUDO POR R$24,90</span>
                   </div>
                 </div>
 
