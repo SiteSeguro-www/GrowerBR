@@ -148,20 +148,15 @@ export default function App() {
 
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12 xl:gap-20 relative z-20">
+          <section className="pt-20 pb-16 md:pt-24 md:pb-24 px-6 max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12 xl:gap-20 relative z-20">
             
-            {/* Left Column: Titles */}
+             {/* Left Column: Titles */}
             <motion.div
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm mb-6 lg:mb-8 backdrop-blur-md shadow-xl">
-                <Star className="w-3 h-3 lg:w-4 lg:h-4 text-green-400 fill-green-400" />
-                <span className="font-bold tracking-widest text-zinc-300 uppercase text-[9px] md:text-xs">Novo Lançamento Premium</span>
-              </div>
-              
               <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[7rem] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.05] md:leading-[0.9] font-display uppercase">
                 GUIA RÁPIDO <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-green-400 to-green-800">
@@ -169,9 +164,10 @@ export default function App() {
                 </span>
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-zinc-400 max-w-2xl mb-8 lg:mb-12 leading-relaxed font-light tracking-wide">
-                O manual definitivo para elevar o nível do seu cultivo. Do setup inicial à colheita de máxima qualidade. 
-                Sem enrolação, com excelência.
+              <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-zinc-300 max-w-2xl mb-8 lg:mb-12 leading-relaxed font-light tracking-wide text-left">
+                Olá, prazer, sou DW. Alguns já devem me conhecer do YouTube; sou grower há mais de 15 anos. <br /><br />
+                Neste e-book, reuni todo meu conhecimento com uma linguagem de fácil entendimento e simples para você que é iniciante. Você pode começar a cultivar sua medicina agora mesmo! <br /><br />
+                Após a compra, você ganha uma consultoria grátis!
               </p>
               
               <div className="lg:hidden w-full flex justify-center pb-4">
