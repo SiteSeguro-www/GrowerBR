@@ -208,7 +208,7 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <div className="flex flex-col gap-1 text-base sm:text-lg md:text-xl font-medium tracking-tight font-display uppercase leading-tight">
+                  <div className="flex flex-col gap-1 text-base sm:text-lg md:text-xl font-medium tracking-tight font-display uppercase leading-tight mx-auto w-fit items-start">
                     <span className="text-zinc-300 whitespace-nowrap">✔️ Pack Com 5 Seeds - R$79,90</span>
                     <span className="text-white whitespace-nowrap">✔️ E-book Completo - R$49,90</span>
                     <span className="text-zinc-200 whitespace-nowrap">✔️ 1 Consultoria - R$69,90</span>
