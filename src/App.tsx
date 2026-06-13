@@ -22,11 +22,13 @@ import {
   Gift
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
+import TermsComponent from './components/TermsComponent';
 
 export default function App() {
   const CHECKOUT_LINK = "https://mpago.li/2pMQXbQ";
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [hasShownExitPopup, setHasShownExitPopup] = useState(false);
+  const [currentPage, setCurrentPage] = useState<'home' | 'terms'>('home');
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
@@ -57,6 +59,10 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [hasShownExitPopup]);
+
+  if (currentPage === 'terms') {
+    return <TermsComponent onBack={() => setCurrentPage('home')} />;
+  }
 
   return (
     <div className="relative min-h-screen bg-[#050505] text-white font-sans selection:bg-green-500/30 selection:text-white overflow-hidden">
@@ -125,22 +131,32 @@ export default function App() {
               <img src="/favicon.png" alt="GrowerBR Logo" className="w-10 h-10 rounded-full border border-white/10 shadow-lg shadow-green-500/10" />
               <span className="font-bold tracking-tight text-white/95 font-display text-lg">GrowerBR</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1 sm:gap-4">
               <a 
-                href={CHECKOUT_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:flex px-6 py-2.5 text-sm font-semibold bg-white/[0.05] border border-white/10 text-white rounded-full hover:bg-white/10 transition-all duration-300"
+                href="mailto:growerbrdw@gmail.com?subject=Interesse%20em%20Sementes&body=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20sementes.%20Pode%20me%20ajudar%3F"
+                className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[8px] sm:text-sm font-semibold border border-transparent bg-clip-border rounded-full hover:border-blue-500 transition-all duration-300"
+                style={{
+                  border: '1px solid transparent',
+                  background: 'linear-gradient(#050505, #050505) padding-box, linear-gradient(to right, #3b82f6, #60a5fa, #3b82f6) border-box',
+                }}
               >
-                Garantir Consultoria
+                SEMENTE
               </a>
               <a 
                 href={CHECKOUT_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 text-sm font-bold bg-green-500 text-black rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-300"
+                className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[8px] sm:text-sm font-semibold bg-white/[0.05] border border-white/10 text-white rounded-full hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
               >
-                Comprar Agora
+                Consultoria
+              </a>
+              <a 
+                href={CHECKOUT_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[8px] sm:text-sm font-bold bg-green-500 text-black rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-300 whitespace-nowrap"
+              >
+                Comprar
               </a>
             </div>
           </div>
@@ -159,7 +175,7 @@ export default function App() {
             >
               <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[7rem] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.05] md:leading-[0.9] font-display uppercase">
                 GUIA RÁPIDO <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-green-400 to-green-800">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-green-200 via-green-500 to-green-900">
                    CULTIVO INDOOR
                 </span>
               </h1>
@@ -178,6 +194,7 @@ export default function App() {
                  </a>
               </div>
             </motion.div>
+...
 
             {/* Right Column: Checkout Card */}
             <motion.div 
@@ -191,11 +208,11 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
-                    <BookOpen className="w-7 h-7 sm:w-8 sm:h-8 text-green-400" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 shadow-inner overflow-hidden">
+                    <img src="/favicon.png" alt="GrowerBR Logo" className="w-full h-full object-cover" />
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-3xl font-black tracking-tighter mb-2 font-display uppercase leading-tight">Invista no seu cultivo.</h2>
-                  <p className="text-xs sm:text-sm text-zinc-400 font-light">E-book completo + Consultoria Especial.</p>
+                  <p className="text-xs sm:text-sm text-zinc-400 font-light">E-book completo + 1 Consultoria Especial + Pack 5 Seeds.</p>
                 </div>
 
                 <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
@@ -353,10 +370,18 @@ export default function App() {
           <p className="text-zinc-500 text-sm mb-4 font-display font-medium tracking-wide">
             &copy; {new Date().getFullYear()} GrowerBR. Todos os direitos reservados.
           </p>
-          <p className="text-zinc-700 text-xs max-w-lg text-center leading-relaxed">
-            Este site não é afiliado ao Facebook, Google ou Apple. 
-            As informações contidas neste e-book têm caráter estritamente educacional.
-          </p>
+          <div className="max-w-lg text-center text-zinc-600 text-[10px] leading-relaxed space-y-2">
+            <p>
+              O canal GrowerBr não faz apologia, não incentiva o uso recreativo de substâncias e não promove qualquer atividade ilegal.
+              As informações contidas neste e-book têm caráter estritamente educacional.
+            </p>
+            <button 
+              onClick={() => setCurrentPage('terms')}
+              className="text-green-600 hover:text-green-500 underline uppercase tracking-widest font-bold"
+            >
+              Termos de Uso
+            </button>
+          </div>
         </footer>
       </div>
     </div>
