@@ -208,20 +208,21 @@ export default function App() {
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
 
                 <div className="text-center mb-8">
-                  <div className="flex flex-col gap-1 text-xl sm:text-2xl font-bold tracking-tight font-display uppercase leading-tight">
-                    <span className="text-white">E-book completo.</span>
-                    <span className="text-zinc-300">1 Consultoria Grátis.</span>
-                    <span className="text-zinc-500">Pack 5 Com Seeds.</span>
+                  <div className="flex flex-col gap-1 text-sm sm:text-base font-medium tracking-tight font-display uppercase leading-tight">
+                    <span className="text-white">E-book completo. - $49,90</span>
+                    <span className="text-zinc-200">1 Consultoria Grátis. - $69,90</span>
+                    <span className="text-zinc-400">Pack 5 Com Seeds. - $80,00</span>
+                    <span className="text-white font-bold text-lg mt-2">TUDO POR R$8,30</span>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-6 items-center bg-[#111] p-6 sm:p-8 rounded-[1.5rem] border border-white/5 mb-8 relative overflow-hidden group transition-all duration-500 hover:border-white/10 shadow-xl">
                   <div className="text-center relative z-10 w-full">
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-lg sm:text-xl text-zinc-500 font-light">6x de</span>
-                      <span className="text-4xl sm:text-6xl font-black tracking-tighter font-display text-white">R$3<span className="text-2xl sm:text-4xl text-zinc-400">,16</span></span>
+                      <span className="text-lg sm:text-xl text-zinc-500 font-light">3x de</span>
+                      <span className="text-4xl sm:text-6xl font-black tracking-tighter font-display text-white">R$8<span className="text-2xl sm:text-4xl text-zinc-400">,30</span></span>
                     </div>
-                    <p className="text-green-400 mt-2 text-[10px] sm:text-xs font-medium tracking-wide">Ou apenas R$ 19,00 à vista.</p>
+                    <p className="text-green-400 mt-2 text-[10px] sm:text-xs font-medium tracking-wide">Ou apenas R$ 24,90 à vista.</p>
                   </div>
 
                   <div className="w-full flex flex-col gap-3 relative z-10">
