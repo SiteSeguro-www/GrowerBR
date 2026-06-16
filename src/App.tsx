@@ -19,7 +19,8 @@ import {
   Mail,
   Youtube,
   X,
-  Gift
+  Gift,
+  Leaf
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import TermsComponent from './components/TermsComponent';
@@ -305,58 +306,43 @@ export default function App() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Large Card */}
-              <div className="md:col-span-2 bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between overflow-hidden relative group shadow-2xl backdrop-blur-md">
-                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10 h-full flex flex-col justify-end">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
-                    <Sun className="w-7 h-7 text-green-400" />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight text-white/95">Setup de Iluminação</h3>
-                  <p className="text-zinc-400 leading-relaxed max-w-lg text-lg font-light">
-                    Descubra as especificações exatas de painéis LED, ciclos de luz perfeitos para Vega e Flora, e como maximizar o rendimento energético.
-                  </p>
-                </div>
-                {/* Ambient detail */}
-                <div className="absolute -top-32 -right-32 w-96 h-96 bg-green-500/10 rounded-full blur-[80px] group-hover:bg-green-500/20 transition-all duration-700"></div>
-              </div>
-
-              <div className="bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col relative group overflow-hidden shadow-2xl backdrop-blur-md">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
-                  <Droplet className="w-7 h-7 text-blue-400" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Nutrição Intensa</h3>
-                <p className="text-zinc-400 leading-relaxed text-lg font-light flex-grow">
-                  Cronogramas de rega e medição exata. O segredo de uma raiz forte revelado.
-                </p>
-                <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-blue-500/10 rounded-full blur-[60px] group-hover:bg-blue-500/20 transition-all"></div>
-              </div>
-
+              {/* Conteúdo do E-book */}
               <div className="bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col relative group overflow-hidden shadow-2xl backdrop-blur-md">
                 <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
                   <CheckCircle2 className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Passo a Passo</h3>
-                <p className="text-zinc-400 leading-relaxed text-lg font-light flex-grow">
-                  Da germinação meticulosa à secagem e cura. Um roteiro sem falhas.
+                <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Conteúdo do E-book</h3>
+                <ul className="text-zinc-300 text-base font-light space-y-2 list-disc pl-4 flex-grow">
+                  <li>Variedades de Cannabis</li>
+                  <li>Germinação e Ciclo de Vida</li>
+                  <li>Vegetação e Nutrição</li>
+                  <li>Floração e Colheita</li>
+                  <li>Secagem e Cura</li>
+                  <li>Controle de Pragas</li>
+                  <li>Montagem de Estufas</li>
+                </ul>
+              </div>
+
+              {/* Consultoria Gratuita */}
+              <div className="bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col relative group overflow-hidden shadow-2xl backdrop-blur-md">
+                <div className="w-14 h-14 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-8">
+                  <MessageCircle className="w-7 h-7 text-green-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Consultoria Gratuita</h3>
+                <p className="text-zinc-300 leading-relaxed text-base font-light flex-grow">
+                  Ao adquirir o e-book hoje, você ganha acesso a uma consultoria individual para tirar suas dúvidas de cultivo.
                 </p>
               </div>
 
-              {/* Bonus Card */}
-              <div className="md:col-span-2 bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 rounded-[2rem] p-10 hover:border-green-500/30 transition-all duration-700 flex flex-col sm:flex-row items-center sm:items-start gap-8 relative overflow-hidden shadow-2xl backdrop-blur-xl">
-                <div className="flex-1 relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-6">
-                    <MessageCircle className="w-7 h-7 text-green-400" />
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] md:text-xs text-green-400 uppercase tracking-widest font-bold mb-4">
-                    Bônus Premium
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight text-white/95">Consultoria Gratuita</h3>
-                  <p className="text-zinc-400 leading-relaxed text-lg font-light">
-                    Ao adquirir o e-book hoje, você ganha acesso a uma <strong>consultoria individual</strong>. 
-                    Tire suas dúvidas e receba análise personalizada do seu cultivo diretamente por mensagem.
-                  </p>
+              {/* Pack Com 5 Seeds */}
+              <div className="bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col relative group overflow-hidden shadow-2xl backdrop-blur-md">
+                <div className="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-8">
+                  <Leaf className="w-7 h-7 text-yellow-400" />
                 </div>
+                <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Pack Com 5 Seeds</h3>
+                <p className="text-zinc-300 leading-relaxed text-base font-light flex-grow">
+                  Receba um pack selecionado com 5 sementes de alta qualidade para começar seu cultivo com genética garantida.
+                </p>
               </div>
             </div>
           </section>
