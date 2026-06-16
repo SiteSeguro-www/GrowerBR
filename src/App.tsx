@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   CheckCircle2, 
   BookOpen, 
@@ -24,6 +24,67 @@ import {
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import TermsComponent from './components/TermsComponent';
+
+const FloatingChat = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSend = () => {
+    const subject = encodeURIComponent("Contato GrowerBR");
+    const body = encodeURIComponent(message);
+    window.open(`mailto:growerbrdw@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    setIsOpen(false);
+    setMessage("");
+  };
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="mb-4 w-[90vw] sm:w-80 max-w-sm bg-[#111] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+          >
+            <div className="bg-gradient-to-r from-green-500 to-green-600 p-4 flex justify-between items-center text-black">
+              <span className="font-bold font-display uppercase tracking-wider text-sm">Suporte GrowerBR</span>
+              <button onClick={() => setIsOpen(false)} aria-label="Fechar" className="hover:bg-black/10 rounded-full p-1 transition-colors">
+                <X className="w-4 h-4 text-black" />
+              </button>
+            </div>
+            <div className="p-4 flex flex-col gap-3">
+              <p className="text-sm text-zinc-300 font-light">Como podemos ajudar?</p>
+              <textarea 
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Escreva sua mensagem aqui..."
+                className="w-full bg-[#222] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-zinc-500 min-h-[100px] outline-none focus:border-green-500/50 resize-none"
+              />
+              <button 
+                onClick={handleSend}
+                disabled={!message.trim()}
+                className="w-full bg-green-500 hover:bg-green-600 disabled:bg-[#333] disabled:text-zinc-500 text-black font-bold uppercase tracking-widest text-xs sm:text-sm py-3 rounded-xl transition-colors flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4" /> Enviar por Email
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      <motion.button 
+        onClick={() => setIsOpen(!isOpen)}
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        className="w-14 h-14 rounded-full bg-gradient-to-tr from-green-500 to-green-600 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] flex items-center justify-center transition-all focus:outline-none"
+        aria-label="Abrir Chat"
+      >
+        {isOpen ? <X className="w-6 h-6 text-black" /> : <MessageCircle className="w-6 h-6 text-black" />}
+      </motion.button>
+    </div>
+  );
+};
 
 export default function App() {
   const CHECKOUT_LINK = "https://mpago.li/2pMQXbQ";
@@ -378,6 +439,7 @@ export default function App() {
             </button>
           </div>
         </footer>
+        <FloatingChat />
       </div>
     </div>
   );
