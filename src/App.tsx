@@ -293,18 +293,7 @@ export default function App() {
           </section>
 
           {/* Bento Grid Features - Premium Style */}
-          <section className="py-24 px-6 max-w-7xl mx-auto relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-20"
-            >
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 text-white font-display">Conhecimento Refinado.</h2>
-              <p className="text-zinc-400 font-light text-xl max-w-2xl mx-auto">Um material desenvolvido com excelência, pensando em cada detalhe da jornada do cultivador.</p>
-            </motion.div>
-
+          <section className="pb-24 px-6 max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Conteúdo do E-book */}
               <div className="bg-white/[0.02] border border-white/[0.08] rounded-[2rem] p-10 hover:bg-white/[0.04] transition-all duration-500 flex flex-col relative group overflow-hidden shadow-2xl backdrop-blur-md">
@@ -312,7 +301,7 @@ export default function App() {
                   <CheckCircle2 className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Conteúdo do E-book</h3>
-                <ul className="text-zinc-300 text-base font-light space-y-2 list-disc pl-4 flex-grow">
+                <ul className="text-zinc-100 text-base font-normal space-y-2 list-disc pl-4 flex-grow">
                   <li>Variedades de Cannabis</li>
                   <li>Germinação e Ciclo de Vida</li>
                   <li>Vegetação e Nutrição</li>
@@ -329,7 +318,7 @@ export default function App() {
                   <MessageCircle className="w-7 h-7 text-green-400" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Consultoria Gratuita</h3>
-                <p className="text-zinc-300 leading-relaxed text-base font-light flex-grow">
+                <p className="text-zinc-100 leading-relaxed text-base font-normal flex-grow">
                   Ao adquirir o e-book hoje, você ganha acesso a uma consultoria individual para tirar suas dúvidas de cultivo.
                 </p>
               </div>
@@ -340,7 +329,7 @@ export default function App() {
                   <Leaf className="w-7 h-7 text-yellow-400" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 font-display tracking-tight text-white/95">Pack Com 5 Seeds</h3>
-                <p className="text-zinc-300 leading-relaxed text-base font-light flex-grow">
+                <p className="text-zinc-100 leading-relaxed text-base font-normal flex-grow">
                   Receba um pack selecionado com 5 sementes de alta qualidade para começar seu cultivo com genética garantida.
                 </p>
               </div>
